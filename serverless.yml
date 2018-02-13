@@ -1,0 +1,32 @@
+service: serverless api template
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+  timeout: 6
+
+functions:
+
+  getData:
+    handler: functions/getData
+    events:
+      - http:
+          path: api/get/{id}
+          method: get
+          cors: true
+
+  postData:
+    handler: functions/postData
+    events:
+      - http:
+          path: api/post
+          method: post
+          cors: true

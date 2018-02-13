@@ -1,0 +1,12 @@
+# package directories
+node_modules
+jspm_packages
+docs
+
+# Serverless directories
+.serverless
+.log
+.DS_STORE
+.webpack
+.nyc_output
+.eslintcache
